@@ -13,30 +13,8 @@
     <div id="page-transition-overlay" class="page-transition-overlay"></div>
 
     <!-- Background image moved here from CSS to keep image links in Blade -->
-    <div class="hero-bg-wrapper" style="background-image: url('{{ asset('img/hero4.jpg') }}');">
-        <header class="header">
-            <div class="container nav-container">
-                <a href="{{ url('/') }}" class="logo transition-link">
-                    <img src="{{ asset('img/logo.png') }}" alt="Avanty Capital Logo">
-                </a>
-                
-                <div class="menu-toggle" id="mobile-menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-
-                <nav class="nav-links" id="nav-links">
-                    <a href="{{ url('/') }}" class="transition-link">HOME</a>
-                    <a href="{{ url('about-us') }}" class="transition-link">ABOUT US</a>
-                    <a href="{{ url('whatwedo') }}" class="transition-link">CAPABILITIES</a>
-                    <a href="{{ url('areaoffocus') }}" class="transition-link">AREAS OF FOCUS</a>
-                    <a href="{{ url('ourpresence') }}" class="active transition-link">OUR PRESENCE</a>
-                    <a href="{{ url('ourapproach') }}" class="transition-link">OUR APPROACH</a>
-                    <a href="{{ url('contactus') }}" class="transition-link">CONTACT US</a>
-                </nav>
-            </div>
-        </header>
+    <div class="hero-bg-wrapper" style="background-image: url('{{ asset('assets/frontend/img/hero4.jpg') }}');">
+        @include('frontend.home.header')
 
         <main class="container hero-main">
             <div class="hero-text-box">
