@@ -70,7 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     // Database of Team Bios with Updated Content
-    // Note: Image paths removed to adhere to constraint - we now pull the blade parsed images directly from the DOM on click.
     const bioData = {
         "tanaz": {
             name: "Tanaz Islam",
@@ -184,4 +183,16 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+});
+
+// --- NEW CODE: Handle the Back-Forward Cache (BFCache) issue ---
+window.addEventListener('pageshow', (event) => {
+    // event.persisted is true if the page was restored from the browser's history cache
+    if (event.persisted) {
+        const overlay = document.getElementById("page-transition-overlay");
+        if (overlay) {
+            // Instantly hide the overlay when navigating back to the page
+            overlay.classList.add("hidden");
+        }
+    }
 });

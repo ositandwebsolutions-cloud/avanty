@@ -39,5 +39,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-
-
+// --- ADD THIS TO FIX THE BACK BUTTON BLANK SCREEN ---
+window.addEventListener('pageshow', (event) => {
+    // event.persisted is true if the page was restored from the browser's BFCache
+    if (event.persisted) {
+        const overlay = document.getElementById("page-transition-overlay");
+        if (overlay) {
+            // Instantly hide the overlay when coming back to the page
+            overlay.classList.add("hidden");
+        }
+    }
+});
