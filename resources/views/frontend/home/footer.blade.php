@@ -29,9 +29,16 @@
             </div>
         </div>
         <div class="footer-disclaimer">
-            <h4>DISCLAIMER</h4>
-            <p>Avanty Capital is a Singapore based capital firm operating across real estate, infrastructure, acquisitions and strategic transactions.</p>
-        </div>
+    <h4>DISCLAIMER</h4>
+    <div class="disclaimer-content">
+        <p class="disclaimer-text">
+            The information on this website is provided for general information only and is intended to outline the services and capabilities of AVANTY Capital PTE. LTD. Nothing contained herein constitutes investment, financial, legal or tax advice, or an offer or commitment to provide funding or enter into any transaction.<br><br>
+            AVANTY Capital is a private capital origination, transaction management and capital introduction firm. Any transaction is subject to due diligence, commercial approval and definitive legal documentation.<br><br>
+            Whilst every effort is made to ensure the accuracy of the information presented, AVANTY Capital accepts no liability for any loss arising from reliance on this website. All content is the intellectual property of AVANTY Capital and may not be reproduced without prior written consent.
+        </p>
+        <button class="see-more-btn" aria-expanded="false">See more</button>
+    </div>
+</div>
         <div class="footer-bottom">
             <div>&copy; 2026 Avanty Capital. All rights reserved.</div>
             <div class="dev-credit">

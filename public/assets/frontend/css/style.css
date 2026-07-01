@@ -224,3 +224,45 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
 
 
 
+
+/* Base disclaimer text setup (Mobile: 3 lines) */
+.disclaimer-text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 3; /* Limits to 3 lines on mobile */
+    line-clamp: 3;
+    margin-bottom: 5px;
+}
+
+/* Desktop layout: 2 lines */
+@media (min-width: 768px) {
+    .disclaimer-text {
+        -webkit-line-clamp: 2; /* Limits to 2 lines on desktop */
+        line-clamp: 2;
+    }
+}
+
+/* Expanded state (shows full text) */
+.disclaimer-text.expanded {
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+    display: block;
+}
+
+/* See More Button Styling */
+.see-more-btn {
+    background: transparent;
+    border: none;
+    color: #000000 !important; /* Deep black all the time */
+    font-weight: 700;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 14px; /* Adjust to match your footer font size */
+    transition: opacity 0.2s ease;
+}
+
+.see-more-btn:hover {
+    opacity: 0.7; /* Slight fade effect on hover, but stays black */
+}

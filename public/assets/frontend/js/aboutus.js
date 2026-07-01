@@ -175,3 +175,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const seeMoreBtn = document.querySelector('.see-more-btn');
+    const disclaimerText = document.querySelector('.disclaimer-text');
+
+    if (seeMoreBtn && disclaimerText) {
+        seeMoreBtn.addEventListener('click', function() {
+            // Toggle the expanded class
+            disclaimerText.classList.toggle('expanded');
+            
+            // Update button text and aria-expanded state based on the class
+            if (disclaimerText.classList.contains('expanded')) {
+                seeMoreBtn.textContent = 'See less';
+                seeMoreBtn.setAttribute('aria-expanded', 'true');
+            } else {
+                seeMoreBtn.textContent = 'See more';
+                seeMoreBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+});
