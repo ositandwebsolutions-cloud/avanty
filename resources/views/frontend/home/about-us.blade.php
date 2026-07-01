@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>About Us - Avanty Capital</title>
       @include('frontend.home.css')
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/aboutus.css') }}?v=1.3">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/aboutus.css') }}?v=1.4">
 </head>
 <body>
 
@@ -179,6 +179,6 @@
     </div>
 
     <!-- Separated JS Link -->
-    <script src="{{ asset('assets/frontend/js/aboutus.js') }}?v=1.2"></script>
+    <script src="{{ asset('assets/frontend/js/aboutus.js') }}?v=1.4"></script>
 </body>
 </html>

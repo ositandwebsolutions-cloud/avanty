@@ -208,9 +208,44 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
 .footer-links { display: grid; grid-template-columns: 1fr 1fr; gap: 15px 30px; }
 .footer-links a, .footer-contact p, .footer-contact a { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px; display: block; transition: color 0.3s; }
 .footer-links a:hover { color: var(--gold); }
+
 .footer-disclaimer { padding: 40px 0; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
 .footer-disclaimer h4 { font-size: 11px; color: var(--text-dark); letter-spacing: 1.5px; margin-bottom: 20px; font-weight: 600; text-transform: uppercase; }
-.footer-disclaimer p { font-size: 0.75rem; color: var(--text-muted); line-height: 1.9; text-align: justify; }
+
+/* --- NEW DISCLAIMER TRUNCATION CSS --- */
+.disclaimer-content { display: flex; flex-direction: column; align-items: flex-start; }
+.disclaimer-text { 
+    font-size: 0.75rem; 
+    color: var(--text-muted); 
+    line-height: 1.9; 
+    text-align: justify; 
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 2; /* Limits to 2 lines on desktop */
+    line-clamp: 2;
+    margin-bottom: 5px;
+}
+.disclaimer-text.expanded {
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+    display: block;
+}
+.see-more-btn {
+    background: transparent;
+    border: none;
+    color: #000000 !important; /* Deep black all the time */
+    font-weight: 700;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 12px;
+    transition: opacity 0.2s ease;
+    margin-top: 5px;
+}
+.see-more-btn:hover { opacity: 0.7; }
+/* ------------------------------------- */
+
 .footer-bottom { padding-top: 30px; display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-muted); }
 .footer-bottom .dev-credit a { text-decoration: none; color: inherit; transition: opacity 0.3s ease; }
 .footer-bottom .dev-credit a:hover { opacity: 0.8; }
@@ -412,7 +447,9 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
     .footer-logo p, .footer-links a, .footer-contact p, .footer-contact a { font-size: 0.8rem; }
     .footer-bottom { flex-direction: column; text-align: center; gap: 15px; font-size: 0.75rem; }
     .footer-logo p { max-width: 100%; }
-    .footer-disclaimer p { font-size: 0.65rem; line-height: 1.7; }
+
+    /* MOBILE DISCLAIMER: 3 LINES */
+    .disclaimer-text { -webkit-line-clamp: 3; line-clamp: 3; font-size: 0.65rem; line-height: 1.7; }
 }
 
 @media (max-width: 480px) {
@@ -439,8 +476,11 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
     .logo img { height: 60px; }
     footer { padding: 60px 0 30px; }
     .footer-grid { gap: 40px; margin-bottom: 40px; }
-    .footer-disclaimer p { font-size: 0.6rem; }
+    
     .footer-logo p, .footer-links a, .footer-contact p, .footer-contact a { font-size: 0.75rem; }
+
+    /* EXTRA MOBILE OVERRIDE */
+    .disclaimer-text { font-size: 0.6rem; }
 
     .bio-left { padding: 30px 15px 5px 15px; }
     .bio-logo-img { width: 190px; margin-bottom: 15px; }
@@ -458,4 +498,3 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
     .bio-text-content h4 { font-size: 0.85rem; }
     .bio-text-content p, .bio-text-content ul { font-size: 0.85rem; }
 }
-

@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Page Transition Overlay
     const overlay = document.getElementById("page-transition-overlay");
-    setTimeout(() => { overlay.classList.add("hidden"); }, 50);
+    if(overlay) {
+        setTimeout(() => { overlay.classList.add("hidden"); }, 50);
+    }
     
     document.querySelectorAll('.transition-link').forEach(link => {
         link.addEventListener('click', function(e) {
@@ -9,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const href = this.getAttribute('href');
             if(href && href !== '#' && !href.startsWith('#')) {
                 e.preventDefault();
-                overlay.classList.remove("hidden");
+                if(overlay) overlay.classList.remove("hidden");
                 setTimeout(() => { window.location.href = href; }, 400); 
             }
         });
@@ -70,7 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     // Database of Team Bios with Updated Content
-    // Note: Image URLs are intentionally excluded here. They are passed dynamically via the data-image attribute in HTML to stay in blade.
     const bioData = {
         "tanaz": {
             name: "Tanaz Chowdhury",
@@ -115,68 +116,70 @@ document.addEventListener("DOMContentLoaded", () => {
     const bioIntro = document.getElementById('bio-intro-text');
     const dynamicSections = document.getElementById('bio-dynamic-sections');
 
-    teamCards.forEach(card => {
-        card.addEventListener('click', (e) => {
-            e.preventDefault();
-            
-            const memberKey = card.getAttribute('data-member');
-            const memberData = bioData[memberKey];
-            
-            // Extract image directly from the clicked card's data attribute to preserve Blade templating logic
-            const dynamicImageSrc = card.getAttribute('data-image');
+    if(teamCards.length > 0) {
+        teamCards.forEach(card => {
+            card.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                const memberKey = card.getAttribute('data-member');
+                const memberData = bioData[memberKey];
+                
+                // Extract image directly from the clicked card's data attribute to preserve Blade templating logic
+                const dynamicImageSrc = card.getAttribute('data-image');
 
-            if(memberData) {
-                // Populate Header & Intro
-                bioImg.src = dynamicImageSrc; 
-                bioName.innerText = memberData.name;
-                bioTitle.innerText = memberData.title;
-                bioIntro.innerText = memberData.intro;
+                if(memberData) {
+                    // Populate Header & Intro
+                    if(bioImg) bioImg.src = dynamicImageSrc; 
+                    if(bioName) bioName.innerText = memberData.name;
+                    if(bioTitle) bioTitle.innerText = memberData.title;
+                    if(bioIntro) bioIntro.innerText = memberData.intro;
 
-                // Build Dynamic Sections with animation-ready structure
-                dynamicSections.innerHTML = '';
-                memberData.sections.forEach(sec => {
-                    const sectionHTML = `
-                        <div class="bio-section-item">
-                            <div class="bio-icon-box">
-                                ${icons[sec.icon]}
-                            </div>
-                            <div class="bio-text-content">
-                                <h4>${sec.title}</h4>
-                                <div>${sec.content}</div>
-                            </div>
-                        </div>
-                    `;
-                    dynamicSections.innerHTML += sectionHTML;
-                });
+                    // Build Dynamic Sections with animation-ready structure
+                    if(dynamicSections) {
+                        dynamicSections.innerHTML = '';
+                        memberData.sections.forEach(sec => {
+                            const sectionHTML = `
+                                <div class="bio-section-item">
+                                    <div class="bio-icon-box">
+                                        ${icons[sec.icon]}
+                                    </div>
+                                    <div class="bio-text-content">
+                                        <h4>${sec.title}</h4>
+                                        <div>${sec.content}</div>
+                                    </div>
+                                </div>
+                            `;
+                            dynamicSections.innerHTML += sectionHTML;
+                        });
+                    }
 
-                // Trigger Open Panel & Animations
-                bioOverlay.classList.add('active');
-                bioPanel.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent background scrolling
-            }
+                    // Trigger Open Panel & Animations
+                    if(bioOverlay) bioOverlay.classList.add('active');
+                    if(bioPanel) bioPanel.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                }
+            });
         });
-    });
+    }
 
     // Close logic
     const closeBiography = () => {
-        bioOverlay.classList.remove('active');
-        bioPanel.classList.remove('active');
+        if(bioOverlay) bioOverlay.classList.remove('active');
+        if(bioPanel) bioPanel.classList.remove('active');
         document.body.style.overflow = ''; // Restore background scrolling
     };
 
-    bioCloseBtn.addEventListener('click', closeBiography);
-    bioOverlay.addEventListener('click', closeBiography);
+    if (bioCloseBtn) bioCloseBtn.addEventListener('click', closeBiography);
+    if (bioOverlay) bioOverlay.addEventListener('click', closeBiography);
     
     // Close on Escape key
     document.addEventListener('keydown', (e) => {
-        if(e.key === 'Escape' && bioPanel.classList.contains('active')) {
+        if(e.key === 'Escape' && bioPanel && bioPanel.classList.contains('active')) {
             closeBiography();
         }
     });
 
-});
-
-document.addEventListener("DOMContentLoaded", function() {
+    // --- FOOTER DISCLAIMER "SEE MORE" LOGIC ---
     const seeMoreBtn = document.querySelector('.see-more-btn');
     const disclaimerText = document.querySelector('.disclaimer-text');
 
@@ -195,4 +198,5 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
+
 });

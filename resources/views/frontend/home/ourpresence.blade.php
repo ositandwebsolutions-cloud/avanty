@@ -6,7 +6,7 @@
     <title>Our Presence - Avanty Capital</title>
     @include('frontend.home.css')
     <!-- Link to external CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/ourpresence.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/ourpresence.css') }}?v=1.1">
 </head>
 <body>
 

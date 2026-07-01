@@ -6,7 +6,7 @@
     <title>Contact Us - Avanty Capital</title>
     @include('frontend.home.css')
     
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/contactus.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/contactus.css') }}?v=1.3">
 </head>
 <body>
 
