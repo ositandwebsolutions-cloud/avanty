@@ -119,12 +119,11 @@ h1 .gold-text { color: var(--gold); }
 
 .foundation-right { flex: 1; display: grid; grid-template-columns: 1fr 1fr; }
 
-/* Added smooth premium hover animation to foundation cards */
 .f-card { padding: 40px; transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.4s ease, box-shadow 0.4s ease; border-radius: 8px; }
 .f-card:hover { transform: translateY(-5px); background-color: rgba(255, 255, 255, 0.35); box-shadow: 0 15px 30px rgba(0,0,0,0.03); }
 
 .f-card:nth-child(1) { border-right: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding-top: 0; padding-left: 0; border-radius: 0; background: transparent; box-shadow: none; }
-.f-card:nth-child(1):hover { transform: none; } /* Kept border structural integrity on hover for exact original design look */
+.f-card:nth-child(1):hover { transform: none; }
 .f-card:nth-child(2) { border-bottom: 1px solid var(--border-color); padding-top: 0; padding-right: 0; border-radius: 0; }
 .f-card:nth-child(3) { border-right: 1px solid var(--border-color); padding-left: 0; padding-bottom: 0; border-radius: 0; }
 .f-card:nth-child(4) { padding-right: 0; padding-bottom: 0; border-radius: 0; }
@@ -143,7 +142,9 @@ h1 .gold-text { color: var(--gold); }
 .header-line { width: 45px; height: 1.5px; background-color: var(--gold); margin: 0 auto 30px auto; }
 .leadership-header p { font-size: 1.05rem; color: #d1d5db; line-height: 1.8; max-width: 900px; margin: 0 auto; text-align: center; }
 
-.team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+/* Updated Grid to 3 Columns to center the 3 team members */
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1200px; margin: 0 auto; }
+
 .team-card { background-color: #11151a; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.06); transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease; display: flex; flex-direction: column; cursor: pointer; }
 .team-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); border-color: rgba(184, 138, 68, 0.3); }
 
@@ -168,7 +169,6 @@ h1 .gold-text { color: var(--gold); }
 .delay-2 { transition-delay: 0.2s; }
 .delay-3 { transition-delay: 0.3s; }
 .delay-4 { transition-delay: 0.4s; }
-.delay-5 { transition-delay: 0.5s; }
 
 /* BOTTOM STATS BAR */
 .stats-bar { width: 100%; background-color: var(--bg-dark); position: relative; z-index: 3; border-top: 1px solid rgba(255,255,255,0.05); }
@@ -203,6 +203,8 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
 .footer-disclaimer h4 { font-size: 11px; color: var(--text-dark); letter-spacing: 1.5px; margin-bottom: 20px; font-weight: 600; text-transform: uppercase; }
 .footer-disclaimer p { font-size: 0.75rem; color: var(--text-muted); line-height: 1.9; text-align: justify; }
 .footer-bottom { padding-top: 30px; display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-muted); }
+.footer-bottom .dev-credit a { text-decoration: none; color: inherit; transition: opacity 0.3s ease; }
+.footer-bottom .dev-credit a:hover { opacity: 0.8; }
 .footer-bottom .dev-credit span { color: var(--gold); font-weight: 500; }
 
 /* --- BIOGRAPHY SLIDE-IN PANEL --- */
@@ -249,7 +251,7 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
 .bio-close:hover { color: var(--text-dark); background: #f0f0f0; transform: rotate(90deg); transition: transform 0.4s ease, background 0.3s, color 0.3s;}
 
 .bio-details-name { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--text-dark); margin-bottom: 5px; font-weight: 500; letter-spacing: -0.5px;}
-.bio-details-title { font-size: 1.25rem; color: var(--gold); margin-bottom: 35px; font-weight: 400; }
+.bio-details-title { font-size: 1.25rem; color: var(--gold); margin-bottom: 35px; font-weight: 400; line-height: 1.5; }
 .bio-intro-text { font-size: 1rem; color: var(--text-dark); line-height: 1.8; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border-color); }
 
 .bio-dynamic-sections { margin-bottom: 20px; }
@@ -290,7 +292,7 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
 .bio-text-content h4 { font-size: 0.9rem; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; font-weight: 600;}
 .bio-text-content p { font-size: 0.95rem; color: var(--text-dark); line-height: 1.7; margin-bottom: 12px; }
 .bio-text-content p:last-child { margin-bottom: 0; }
-.bio-text-content ul { list-style-type: disc; color: var(--text-dark); font-size: 0.95rem; line-height: 1.7; }
+.bio-text-content ul { list-style-type: disc; color: var(--text-dark); font-size: 0.95rem; line-height: 1.7; padding-left: 5px; }
 .bio-text-content li::marker { color: var(--gold); }
 
 /* --- RESPONSIVE MEDIA QUERIES --- */
@@ -301,6 +303,10 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
     .leadership-header h2 { font-size: 3.2rem; }
     .team-img-wrapper { height: 350px; }
     .team-name { font-size: 1.5rem; }
+    
+    /* Update to 3 columns for mid-size screens since we have 3 members */
+    .team-grid { grid-template-columns: repeat(3, 1fr); max-width: 100%; }
+    
     .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 0; }
     .stat-item { padding: 0 30px; }
     .stat-item:nth-child(2) { border-right: none; }
@@ -336,6 +342,8 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
     .foundation-left, .foundation-right { width: 100%; }
     
     .leadership-header p br { display: none; }
+    
+    /* Team grid to 2 columns on tablet */
     .team-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
     .team-img-wrapper { height: 450px; }
 
@@ -413,11 +421,13 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
     .f-card p { font-size: 0.7rem; }
     
     .leadership-header h2 { font-size: 2rem; }
+    
+    /* Team grid to 1 column on mobile */
     .team-grid { grid-template-columns: 1fr; gap: 30px; }
     .team-img-wrapper { height: 360px; }
     
     /* Remove delays on mobile for instant feedback */
-    .delay-1, .delay-2, .delay-3, .delay-4, .delay-5 { transition-delay: 0s; }
+    .delay-1, .delay-2, .delay-3, .delay-4 { transition-delay: 0s; }
 
     .stat-number { font-size: 1.3rem; }
     .stat-text { font-size: 0.75rem; }

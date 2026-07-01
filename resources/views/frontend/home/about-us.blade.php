@@ -83,12 +83,12 @@
             <div class="team-grid">
                 <div class="team-card animate-on-scroll delay-1" data-member="tanaz">
                     <div class="team-img-wrapper">
-                        <img src="{{ asset('assets/frontend/img/tanaz.jpg') }}" alt="Tanaz Islam" class="team-img">
+                        <img src="{{ asset('assets/frontend/img/tanaz.jpg') }}" alt="Tanaz Chowdhury" class="team-img">
                         <div class="team-gradient"></div>
                     </div>
                     <div class="team-info">
-                        <h3 class="team-name">Tanaz Islam</h3>
-                        <p class="team-title">Executive Director</p>
+                        <h3 class="team-name">Tanaz Chowdhury</h3>
+                        <p class="team-title">Founder / Principal</p>
                         <a href="#" class="bio-btn">
                             <span>Read Biography</span>
                             <span class="arrow">&rarr;</span>
@@ -113,11 +113,11 @@
                 
                 <div class="team-card animate-on-scroll delay-3" data-member="kai">
                     <div class="team-img-wrapper">
-                        <img src="{{ asset('assets/frontend/img/leuw.jpg') }}" alt="Mrs. Kai Leuw" class="team-img">
+                        <img src="{{ asset('assets/frontend/img/leuw.jpg') }}" alt="Kai Yung Lau" class="team-img">
                         <div class="team-gradient"></div>
                     </div>
                     <div class="team-info">
-                        <h3 class="team-name">Mrs. Kai Leuw</h3>
+                        <h3 class="team-name">Kai Yung Lau</h3>
                         <p class="team-title">Head of Operations</p>
                         <a href="#" class="bio-btn">
                             <span>Read Biography</span>
@@ -126,20 +126,6 @@
                     </div>
                 </div>
                 
-                <div class="team-card animate-on-scroll delay-4" data-member="anna">
-                    <div class="team-img-wrapper">
-                        <img src="{{ asset('assets/frontend/img/young.jpg') }}" alt="Anna Young" class="team-img">
-                        <div class="team-gradient"></div>
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">Anna Young</h3>
-                        <p class="team-title">Portfolio Manager</p>
-                        <a href="#" class="bio-btn">
-                            <span>Read Biography</span>
-                            <span class="arrow">&rarr;</span>
-                        </a>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
