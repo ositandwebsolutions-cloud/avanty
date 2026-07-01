@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     // Database of Team Bios with Updated Content
-    // Note: Image paths removed to adhere to constraints - images are pulled dynamically from Blade HTML
+    // Note: Image URLs are intentionally excluded here. They are passed dynamically via the data-image attribute in HTML to stay in blade.
     const bioData = {
         "tanaz": {
             name: "Tanaz Chowdhury",
@@ -122,12 +122,12 @@ document.addEventListener("DOMContentLoaded", () => {
             const memberKey = card.getAttribute('data-member');
             const memberData = bioData[memberKey];
             
-            // Extract the parsed Blade Image SRC directly from the clicked card
-            const memberImageSrc = card.querySelector('.team-img').src;
+            // Extract image directly from the clicked card's data attribute to preserve Blade templating logic
+            const dynamicImageSrc = card.getAttribute('data-image');
 
             if(memberData) {
                 // Populate Header & Intro
-                bioImg.src = memberImageSrc; 
+                bioImg.src = dynamicImageSrc; 
                 bioName.innerText = memberData.name;
                 bioTitle.innerText = memberData.title;
                 bioIntro.innerText = memberData.intro;
@@ -174,26 +174,4 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-});
-
-// --- BACK BUTTON BLANK SCREEN FIX (BFCache) ---
-window.addEventListener('pageshow', (event) => {
-    if (event.persisted) {
-        const overlay = document.getElementById("page-transition-overlay");
-        if (overlay) {
-            overlay.classList.add("hidden");
-        }
-    }
-});
-
-// --- NEW CODE: Handle the Back-Forward Cache (BFCache) issue ---
-window.addEventListener('pageshow', (event) => {
-    // event.persisted is true if the page was restored from the browser's history cache
-    if (event.persisted) {
-        const overlay = document.getElementById("page-transition-overlay");
-        if (overlay) {
-            // Instantly hide the overlay when navigating back to the page
-            overlay.classList.add("hidden");
-        }
-    }
 });
