@@ -113,11 +113,11 @@
                 
                 <div class="team-card animate-on-scroll delay-3" data-member="kai">
                     <div class="team-img-wrapper">
-                        <img src="{{ asset('assets/frontend/img/lauis.jpg') }}" alt="Kai Yung Lau" class="team-img">
+                        <img src="{{ asset('assets/frontend/img/lauis.jpg') }}" alt="Kai Yung Laui" class="team-img">
                         <div class="team-gradient"></div>
                     </div>
                     <div class="team-info">
-                        <h3 class="team-name">Kai Yung Lau</h3>
+                        <h3 class="team-name">Kai Yung Laui</h3>
                         <p class="team-title">Head of Operations</p>
                         <a href="#" class="bio-btn">
                             <span>Read Biography</span>
