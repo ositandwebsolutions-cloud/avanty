@@ -31,7 +31,7 @@
                 <h4>DISCLAIMER</h4>
                 <p>Avanty Capital is a Singapore based capital firm operating across real estate, infrastructure, acquisitions and strategic transactions.</p>
             </div>
-            <<div class="footer-bottom">
+            <div class="footer-bottom">
     <div>&copy; 2026 Avanty Capital. All rights reserved.</div>
     <div class="dev-credit">
         <a href="https://asthadmm.com" target="_blank" rel="noopener noreferrer">
