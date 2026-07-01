@@ -38,7 +38,7 @@
         </p>
         <button class="see-more-btn" aria-expanded="false">See more</button>
     </div>
-</div>
+    </div>
         <div class="footer-bottom">
             <div>&copy; 2026 Avanty Capital. All rights reserved.</div>
             <div class="dev-credit">
