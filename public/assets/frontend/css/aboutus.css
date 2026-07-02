@@ -392,8 +392,8 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
     
     .bio-image-large { 
         object-fit: cover; object-position: top center; 
-        mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 65%, transparent 100%);
-        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 65%, transparent 100%);
+        mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
     }
     
     .bio-right { 
@@ -402,11 +402,11 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
         box-shadow: 0 -10px 40px rgba(0,0,0,0.06); 
     }
 
-    .bio-details-name { font-size: 2.4rem; }
-    .bio-details-title { font-size: 0.95rem; margin-bottom: 25px; }
-    .bio-intro-text { font-size: 0.9rem; line-height: 1.7; margin-bottom: 30px; padding-bottom: 30px; }
+    .bio-details-name { font-size: 2.8rem; }
+    .bio-details-title { font-size: 1.05rem; margin-bottom: 25px; }
+    .bio-intro-text { font-size: 0.95rem; line-height: 1.7; margin-bottom: 30px; padding-bottom: 30px; }
     .bio-section-item { gap: 20px; margin-bottom: 35px; }
-    .bio-text-content p, .bio-text-content ul { font-size: 0.85rem; line-height: 1.7; }
+    .bio-text-content p, .bio-text-content ul { font-size: 0.9rem; line-height: 1.7; }
     
     .bio-close { 
         position: fixed; top: 20px; right: -100px; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.1); 

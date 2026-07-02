@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>About Us - Avanty Capital</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/aboutus.css') }}">
+      @include('frontend.home.css')
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/aboutus.css') }}?v=1.5">
 </head>
 <body>
 
@@ -102,7 +101,7 @@
             </div>
             
             <div class="team-grid">
-                <div class="team-card animate-on-scroll delay-1" data-member="tanaz" data-image="{{ asset('assets/frontend/img/tanaz.jpg') }}">
+                <div class="team-card animate-on-scroll delay-1" data-member="tanaz">
                     <div class="team-img-wrapper">
                         <img src="{{ asset('assets/frontend/img/tanaz.jpg') }}" alt="Tanaz Choudhury" class="team-img">
                         <div class="team-gradient"></div>
@@ -117,7 +116,7 @@
                     </div>
                 </div>
                 
-                <div class="team-card animate-on-scroll delay-2" data-member="jenny" data-image="{{ asset('assets/frontend/img/lee.jpg') }}">
+                <div class="team-card animate-on-scroll delay-2" data-member="jenny">
                     <div class="team-img-wrapper">
                         <img src="{{ asset('assets/frontend/img/lee.jpg') }}" alt="Jenny Won Lee" class="team-img">
                         <div class="team-gradient"></div>
@@ -132,7 +131,7 @@
                     </div>
                 </div>
                 
-                <div class="team-card animate-on-scroll delay-3" data-member="kai" data-image="{{ asset('assets/frontend/img/leuw.jpg') }}">
+                <div class="team-card animate-on-scroll delay-3" data-member="kai">
                     <div class="team-img-wrapper">
                         <img src="{{ asset('assets/frontend/img/leuw.jpg') }}" alt="Kai Leuw" class="team-img">
                         <div class="team-gradient"></div>
@@ -247,6 +246,7 @@
         </div>
     </div>
 
-    <script src="{{ asset('assets/frontend/js/aboutus.js') }}"></script>
+    <!-- Separated JS Link -->
+    <script src="{{ asset('assets/frontend/js/aboutus.js') }}?v=1.5"></script>
 </body>
 </html>

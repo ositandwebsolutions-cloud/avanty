@@ -69,8 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
         edu: `<svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>`
     };
 
-    // Database of Team Bios with Updated Content
-    // Image paths removed entirely from JS to ensure Blade handles asset linking!
+    // Database of Team Bios (Images fetched dynamically from HTML to satisfy constraints)
     const bioData = {
         "tanaz": {
             name: "Tanaz Choudhury",
@@ -120,12 +119,12 @@ document.addEventListener("DOMContentLoaded", () => {
             e.preventDefault();
             
             const memberKey = card.getAttribute('data-member');
-            const memberImage = card.getAttribute('data-image'); // Fetch image source from HTML attribute
             const memberData = bioData[memberKey];
+            const memberImgSrc = card.querySelector('.team-img').getAttribute('src');
 
             if(memberData) {
                 // Populate Header & Intro
-                bioImg.src = memberImage; // Dynamic image rendered from Blade
+                bioImg.src = memberImgSrc;
                 bioName.innerText = memberData.name;
                 bioTitle.innerText = memberData.title;
                 bioIntro.innerText = memberData.intro;
