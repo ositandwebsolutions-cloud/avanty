@@ -5,36 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>About Us - Avanty Capital</title>
       @include('frontend.home.css')
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/aboutus.css') }}?v=1.5">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/aboutus.css') }}?v=1.7">
 </head>
 <body>
 
     <div id="page-transition-overlay" class="page-transition-overlay"></div>
 
     <div class="hero-bg-wrapper" style="background-image: url('{{ asset('assets/frontend/img/hero2.jpg') }}');">
-        <header class="header">
-            <div class="container nav-container">
-                <a href="{{ url('/') }}" class="logo transition-link">
-                    <img src="{{ asset('assets/frontend/img/logo.png') }}" alt="Avanty Capital Logo">
-                </a>
-                
-                <div class="menu-toggle" id="mobile-menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-
-                <nav class="nav-links" id="nav-links">
-                    <a href="{{ url('/') }}" class="{{ request()->is('/') ? 'active' : '' }} transition-link">HOME</a>
-                    <a href="{{ url('/about-us') }}" class="{{ request()->is('about-us') ? 'active' : '' }} transition-link">ABOUT US</a>
-                    <a href="{{ url('/capabilities') }}" class="{{ request()->is('capabilities') ? 'active' : '' }} transition-link">CAPABILITIES</a>
-                    <a href="{{ url('/areaoffocus') }}" class="{{ request()->is('areaoffocus') ? 'active' : '' }} transition-link">AREAS OF FOCUS</a>
-                    <a href="{{ url('/ourpresence') }}" class="{{ request()->is('ourpresence') ? 'active' : '' }} transition-link">OUR PRESENCE</a>
-                    <a href="{{ url('/ourapproach') }}" class="{{ request()->is('ourapproach') ? 'active' : '' }} transition-link">OUR APPROACH</a>
-                    <a href="{{ url('/contactus') }}" class="{{ request()->is('contactus') ? 'active' : '' }} transition-link">CONTACT US</a>
-                </nav>
-            </div>
-        </header>
+        @include('frontend.home.header')
 
         <main class="container hero-main">
             <div class="hero-text-box">
@@ -176,56 +154,7 @@
         </div>
     </div>
 
-    <footer>
-        <div class="container animate-on-scroll">
-            <div class="footer-grid">
-                
-                <div class="footer-logo">
-                    <img src="{{ asset('assets/frontend/img/logo.png') }}" alt="Avanty Capital Logo">
-                    <p>Singapore-based strategic capital firm supporting real assets, private clients and cross border transactions.</p>
-                </div>
-                
-                <div class="footer-col">
-                    <h4>IMPORTANT LINKS</h4>
-                    <div class="footer-links">
-                        <div>
-                            <a href="{{ url('/') }}" class="transition-link">Home</a>
-                            <a href="{{ url('/about-us') }}" class="transition-link">About Us</a>
-                            <a href="{{ url('/capabilities') }}" class="transition-link">Capabilities</a>
-                        </div>
-                        <div>
-                            <a href="{{ url('/contactus') }}" class="transition-link">Contact</a>
-                            <a href="{{ url('/ourpresence') }}" class="transition-link">Our Presence</a>
-                            <a href="{{ url('/areaoffocus') }}" class="transition-link">Area of Focus</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="footer-col footer-contact">
-                    <h4>CONTACT</h4>
-                    <p>Singapore Business Federation Centre</p>
-                    <p>Office 14-04</p>
-                    <p>160 Robinson Road</p>
-                    <p>Singapore 068914</p>
-                </div>
-                
-            </div>
-
-            <div class="footer-disclaimer">
-                <h4>DISCLAIMER</h4>
-                <p>Avanty Capital is a Singapore based capital firm operating across real estate, infrastructure, acquisitions and strategic transactions.</p>
-            </div>
-
-            <div class="footer-bottom">
-                <div>&copy; 2026 Avanty Capital. All rights reserved.</div>
-                <div class="dev-credit">
-                    <a href="https://asthadmm.com" target="_blank" rel="noopener noreferrer">
-                        Developed by <span>Astha DMM</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    @include('frontend.home.footer')
 
     <div class="bio-overlay" id="bio-overlay"></div>
     <div class="bio-panel" id="bio-panel">
@@ -246,7 +175,6 @@
         </div>
     </div>
 
-    <!-- Separated JS Link -->
-    <script src="{{ asset('assets/frontend/js/aboutus.js') }}?v=1.5"></script>
+    <script src="{{ asset('assets/frontend/js/aboutus.js') }}?v=1.7"></script>
 </body>
 </html>

@@ -171,4 +171,25 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // --- DISCLAIMER SLIDE TOGGLE LOGIC ---
+    const seeMoreBtn = document.querySelector('.see-more-btn');
+    const disclaimerText = document.querySelector('.disclaimer-text');
+
+    if (seeMoreBtn && disclaimerText) {
+        seeMoreBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Toggle the expanded class
+            disclaimerText.classList.toggle('expanded');
+            
+            // Update button text and ARIA state
+            if (disclaimerText.classList.contains('expanded')) {
+                seeMoreBtn.innerText = 'See less';
+                seeMoreBtn.setAttribute('aria-expanded', 'true');
+            } else {
+                seeMoreBtn.innerText = 'See more';
+                seeMoreBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
 });
