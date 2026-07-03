@@ -342,7 +342,7 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
 
 .disclaimer-text {
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* Shows exactly 2 lines and adds the ellipsis */
+    -webkit-line-clamp: 3; /* Set to 3 to precisely match the screenshot output */
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -350,7 +350,7 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
 }
 
 .disclaimer-text.expanded {
-    display: block; /* Removes the line clamp */
+    display: block;
     -webkit-line-clamp: unset;
     overflow: visible;
 }
@@ -359,19 +359,19 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
 .see-more-btn {
     background: transparent;
     border: none;
-    color: #000000 !important; /* Deep black all the time */
-    font-weight: 400;
+    color: var(--text-dark) !important; /* Deep text based on your variable */
+    font-weight: 400; /* As requested */
+    font-size: 10px;  /* As requested */
     padding: 0;
     cursor: pointer;
     text-decoration: underline;
-    font-size: 10px; /* Adjust to match your footer font size */
     transition: opacity 0.2s ease;
-    margin-top: 8px; /* Slight spacing below the text */
+    margin-top: 8px;
     display: inline-block;
 }
 
 .see-more-btn:hover {
-    opacity: 0.7; /* Slight fade effect on hover, but stays black */
+    opacity: 0.7;
 }
 
 /* --- RESPONSIVE MEDIA QUERIES --- */
