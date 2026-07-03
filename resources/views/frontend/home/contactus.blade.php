@@ -144,6 +144,6 @@
 
     @include('frontend.home.footer')
 
-    <script src="{{ asset('assets/frontend/js/script.js') }}"></script>
+    <script src="{{ asset('assets/frontend/js/script.js') }}?v=1.2"></script>
 </body>
 </html>
