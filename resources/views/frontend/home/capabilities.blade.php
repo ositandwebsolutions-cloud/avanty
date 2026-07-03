@@ -7,7 +7,7 @@
     
     @include('frontend.home.css')
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/capabilities.css') }}?v=1.5">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/capabilities.css') }}?v=1.8">
 </head>
 <body>
 
@@ -146,6 +146,6 @@
      @include('frontend.home.footer')
 
     <!-- Custom JS -->
-    <script src="{{ asset('assets/frontend/js/script.js') }}?v=1.2"></script>
+    <script src="{{ asset('assets/frontend/js/script.js') }}?v=1.5"></script>
 </body>
 </html>
