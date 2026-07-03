@@ -7,7 +7,7 @@
     
     @include('frontend.home.css')
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/capabilities.css') }}?v=1.3">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/capabilities.css') }}?v=1.5">
 </head>
 <body>
 
