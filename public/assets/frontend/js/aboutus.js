@@ -172,12 +172,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // --- DISCLAIMER SLIDE TOGGLE LOGIC ---
-    const seeMoreBtn = document.querySelector('.see-more-btn');
+     const seeMoreBtn = document.querySelector('.see-more-btn');
     const disclaimerText = document.querySelector('.disclaimer-text');
 
     if (seeMoreBtn && disclaimerText) {
-        seeMoreBtn.addEventListener('click', function(e) {
-            if(e) e.preventDefault();
+        seeMoreBtn.addEventListener('click', function() {
             // Toggle the expanded class
             disclaimerText.classList.toggle('expanded');
             

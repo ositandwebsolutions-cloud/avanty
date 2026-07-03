@@ -342,7 +342,7 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
 
 .disclaimer-text {
     display: -webkit-box;
-    -webkit-line-clamp: 3; /* Set to 3 to precisely match the screenshot output */
+    -webkit-line-clamp: 2; /* Changed from 3 to 2 for desktop to match 1st picture */
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -453,6 +453,11 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
     }
     .bio-panel.active .bio-close {
         right: 20px;
+    }
+
+    /* Retain original Mobile Disclaimer line-clamp behavior */
+    .disclaimer-text {
+        -webkit-line-clamp: 3;
     }
 }
 

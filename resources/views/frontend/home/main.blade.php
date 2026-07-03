@@ -7,7 +7,7 @@
     <meta name="description" content="Avanty Capital is a Singapore-based firm specializing in capital origination, participation, and deployment across real estate, infrastructure, and strategic transactions.">
     
     @include('frontend.home.css')
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/style.css') }}?v=1.1">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/style.css') }}?v=1.2">
 </head>
 <body>
 
@@ -63,6 +63,6 @@
 
      @include('frontend.home.footer')
 
-    <script src="{{ asset('assets/frontend/js/script.js') }}?v=1.1"></script>
+    <script src="{{ asset('assets/frontend/js/script.js') }}?v=1.2"></script>
 </body>
 </html>
