@@ -7,7 +7,7 @@
     @include('frontend.home.css')
     <!-- Link to external CSS -->
     
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/ourapproach.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/ourapproach.css') }}?v=1.2">
 </head>
 <body>
 
