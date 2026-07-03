@@ -355,24 +355,24 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
     overflow: visible;
 }
 
+/* See More Button Styling */
 .see-more-btn {
     background: transparent;
     border: none;
-    color: var(--text-dark);
+    color: #000000 !important; /* Deep black all the time */
+    font-weight: 400;
     padding: 0;
-    font-size: 0.85rem;
-    font-weight: 700; /* Bold */
-    text-decoration: underline; /* Underline text */
     cursor: pointer;
+    text-decoration: underline;
+    font-size: 10px; /* Adjust to match your footer font size */
+    transition: opacity 0.2s ease;
     margin-top: 8px; /* Slight spacing below the text */
-    transition: color 0.3s ease;
     display: inline-block;
 }
 
 .see-more-btn:hover {
-    color: var(--gold);
+    opacity: 0.7; /* Slight fade effect on hover, but stays black */
 }
-
 
 /* --- RESPONSIVE MEDIA QUERIES --- */
 

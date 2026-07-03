@@ -176,18 +176,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const disclaimerText = document.querySelector('.disclaimer-text');
 
     if (seeMoreBtn && disclaimerText) {
-        seeMoreBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            
+        seeMoreBtn.addEventListener('click', function(e) {
+            if(e) e.preventDefault();
             // Toggle the expanded class
             disclaimerText.classList.toggle('expanded');
             
-            // Update button text and ARIA state
+            // Update button text and aria-expanded state based on the class
             if (disclaimerText.classList.contains('expanded')) {
-                seeMoreBtn.innerText = 'See less';
+                seeMoreBtn.textContent = 'See less';
                 seeMoreBtn.setAttribute('aria-expanded', 'true');
             } else {
-                seeMoreBtn.innerText = 'See more';
+                seeMoreBtn.textContent = 'See more';
                 seeMoreBtn.setAttribute('aria-expanded', 'false');
             }
         });
