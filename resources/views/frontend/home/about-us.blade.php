@@ -81,7 +81,7 @@
             <div class="team-grid">
                 <div class="team-card animate-on-scroll delay-1" data-member="tanaz">
                     <div class="team-img-wrapper">
-                        <img src="{{ asset('assets/frontend/img/tanaz.jpg') }}" alt="Tanaz Choudhury" class="team-img">
+                        <img src="{{ asset('assets/frontend/img/tanaj.jpg') }}" alt="Tanaz Choudhury" class="team-img">
                         <div class="team-gradient"></div>
                     </div>
                     <div class="team-info">
@@ -96,7 +96,7 @@
                 
                 <div class="team-card animate-on-scroll delay-2" data-member="jenny">
                     <div class="team-img-wrapper">
-                        <img src="{{ asset('assets/frontend/img/lee.jpg') }}" alt="Jenny Won Lee" class="team-img">
+                        <img src="{{ asset('assets/frontend/img/jenny.jpg') }}" alt="Jenny Won Lee" class="team-img">
                         <div class="team-gradient"></div>
                     </div>
                     <div class="team-info">
@@ -111,7 +111,7 @@
                 
                 <div class="team-card animate-on-scroll delay-3" data-member="kai">
                     <div class="team-img-wrapper">
-                        <img src="{{ asset('assets/frontend/img/leuw.jpg') }}" alt="Kai Leuw" class="team-img">
+                        <img src="{{ asset('assets/frontend/img/kai.jpg') }}" alt="Kai Leuw" class="team-img">
                         <div class="team-gradient"></div>
                     </div>
                     <div class="team-info">
