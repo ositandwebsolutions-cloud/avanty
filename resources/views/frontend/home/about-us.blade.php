@@ -160,6 +160,6 @@
         </div>
     </div>
 
-    <script src="{{ asset('assets/frontend/js/aboutus.js') }}?v=1.9"></script>
+    <script src="{{ asset('assets/frontend/js/aboutus.js') }}?v=2"></script>
 </body>
 </html>
