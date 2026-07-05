@@ -151,17 +151,22 @@ h1 .gold-text { color: var(--gold); }
     margin: 0 auto; 
 }
 
-.team-card { background-color: #11151a; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.06); transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease; display: flex; flex-direction: column; cursor: pointer; }
+.team-card { 
+    background: linear-gradient(145deg, #11151a, #0d1014); 
+    border-radius: 12px; 
+    overflow: hidden; 
+    border: 1px solid rgba(255, 255, 255, 0.06); 
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease; 
+    display: flex; 
+    flex-direction: column; 
+    cursor: pointer; 
+    min-height: 250px;
+}
 .team-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); border-color: rgba(184, 138, 68, 0.3); }
 
-.team-img-wrapper { position: relative; height: 400px; overflow: hidden; }
-.team-img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 0.7s cubic-bezier(0.165, 0.84, 0.44, 1); }
-.team-card:hover .team-img { transform: scale(1.05); }
-.team-gradient { position: absolute; bottom: 0; left: 0; width: 100%; height: 65%; background: linear-gradient(to top, #11151a 0%, rgba(17, 21, 26, 0.9) 25%, transparent 100%); pointer-events: none; }
-
-.team-info { padding: 0 24px 24px 24px; display: flex; flex-direction: column; flex-grow: 1; z-index: 2; position: relative; margin-top: -50px; }
+.team-info { padding: 40px 30px; display: flex; flex-direction: column; flex-grow: 1; z-index: 2; position: relative; margin-top: 0; }
 .team-name { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--text-white); font-weight: 500; margin-bottom: 8px; letter-spacing: -0.5px; }
-.team-title { font-size: 0.9rem; color: var(--gold); margin-bottom: 30px; font-weight: 400; }
+.team-title { font-size: 0.9rem; color: var(--gold); margin-bottom: 30px; font-weight: 400; line-height: 1.4; }
 
 .bio-btn { display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; border: 1px solid rgba(184, 138, 68, 0.4); color: #d1d5db; font-size: 0.85rem; letter-spacing: 0.5px; border-radius: 4px; transition: all 0.3s ease; margin-top: auto; }
 .team-card:hover .bio-btn { border-color: var(--gold); color: var(--gold); }
@@ -207,7 +212,56 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
 .footer-links a:hover { color: var(--gold); }
 .footer-disclaimer { padding: 40px 0; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
 .footer-disclaimer h4 { font-size: 11px; color: var(--text-dark); letter-spacing: 1.5px; margin-bottom: 20px; font-weight: 600; text-transform: uppercase; }
-.footer-disclaimer p { font-size: 0.75rem; color: var(--text-muted); line-height: 1.9; text-align: justify; }
+
+/* -------------------------------------------
+   UPDATED DISCLAIMER LOGIC & STYLING 
+------------------------------------------- */
+.footer-disclaimer p { 
+    font-size: 0.75rem; 
+    color: var(--text-muted); 
+    line-height: 1.9; 
+    text-align: left; 
+    margin-bottom: 15px; 
+}
+.footer-disclaimer p:last-child { 
+    margin-bottom: 0; 
+}
+
+/* Base Truncation (Collapsed State) */
+.disclaimer-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Desktop specifically clamped to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Expanded state (shows full text) */
+.disclaimer-text.expanded {
+    -webkit-line-clamp: unset;
+    display: block;
+}
+
+/* See More Button Styling */
+.see-more-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-dark) !important; 
+    font-family: inherit;
+    font-weight: 400; /* As requested */
+    font-size: 10px;  /* As requested */
+    padding: 0;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: opacity 0.2s ease;
+    margin-top: 8px;
+    display: inline-block;
+}
+
+.see-more-btn:hover {
+    opacity: 0.7;
+}
+/* ------------------------------------------- */
+
 .footer-bottom { padding-top: 30px; display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-muted); }
 .footer-bottom .dev-credit a { text-decoration: none; color: inherit; transition: opacity 0.3s ease; }
 .footer-bottom .dev-credit a:hover { opacity: 0.8; }
@@ -232,9 +286,8 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
 .bio-panel.active { right: 0; }
 
 .bio-left {
-    flex: 0 0 45%; background: var(--bg-fallback); display: flex; flex-direction: column;
-    align-items: center; position: relative; padding-top: 50px; overflow: hidden;
-    justify-content: flex-start;
+    flex: 0 0 38%; background: var(--bg-fallback); display: flex; flex-direction: column;
+    align-items: center; justify-content: center; position: relative; padding: 40px; overflow: hidden;
 }
 /* Soft radial glow behind image for depth */
 .bio-left::before {
@@ -245,24 +298,12 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
 
 .bio-logo-img { 
     width: 220px; 
-    margin-bottom: 10px; 
     z-index: 2; 
     position: relative; 
     image-rendering: -webkit-optimize-contrast;
     image-rendering: high-quality;
     transform: translateZ(0);
     backface-visibility: hidden;
-}
-
-.bio-image-wrapper-large {
-    flex: 1; width: 100%; display: flex; align-items: flex-end; justify-content: center;
-    position: relative; z-index: 1; margin-top: -30px;
-}
-.bio-image-large { 
-    width: 100%; height: 100%; object-fit: cover; object-position: top center; 
-    mix-blend-mode: multiply;
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 70%, transparent 98%);
-    mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 70%, transparent 98%);
 }
 
 .bio-right {
@@ -335,52 +376,12 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
 .bio-text-content li::marker { color: var(--gold); }
 .bio-text-content li { margin-bottom: 8px; }
 
-/* --- DISCLAIMER TOGGLE STYLES (MATCHES DESIGN) --- */
-.disclaimer-content {
-    position: relative;
-}
-
-.disclaimer-text {
-    display: -webkit-box;
-    -webkit-line-clamp: 2; /* Changed from 3 to 2 for desktop to match 1st picture */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin-bottom: 0;
-}
-
-.disclaimer-text.expanded {
-    display: block;
-    -webkit-line-clamp: unset;
-    overflow: visible;
-}
-
-/* See More Button Styling */
-.see-more-btn {
-    background: transparent;
-    border: none;
-    color: var(--text-dark) !important; /* Deep text based on your variable */
-    font-weight: 400; /* As requested */
-    font-size: 10px;  /* As requested */
-    padding: 0;
-    cursor: pointer;
-    text-decoration: underline;
-    transition: opacity 0.2s ease;
-    margin-top: 8px;
-    display: inline-block;
-}
-
-.see-more-btn:hover {
-    opacity: 0.7;
-}
-
 /* --- RESPONSIVE MEDIA QUERIES --- */
 
 @media (max-width: 1200px) {
     h1 { font-size: 4.5rem; }
     .foundation-left h2 { font-size: 2.4rem; }
     .leadership-header h2 { font-size: 3.2rem; }
-    .team-img-wrapper { height: 350px; }
     .team-name { font-size: 1.5rem; }
     
     .team-grid { grid-template-columns: repeat(3, minmax(280px, 1fr)); max-width: 100%; justify-content: center; }
@@ -422,30 +423,22 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
     .leadership-header p br { display: none; }
     
     .team-grid { grid-template-columns: repeat(2, minmax(280px, 380px)); gap: 24px; justify-content: center; }
-    .team-img-wrapper { height: 450px; }
 
     /* Updated Bio Panel Mobile/Tablet Typography Adjustments */
     .bio-panel { flex-direction: column; overflow-y: auto; right: -100%; }
-    .bio-left { flex: none; height: auto; padding: 40px 0 0 0; border-right: none; }
-    .bio-image-wrapper-large { height: 450px; width: 100%; align-items: flex-end; margin-top: -15px; }
-    
-    .bio-image-large { 
-        object-fit: cover; object-position: top center; 
-        mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
-        -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
-    }
+    .bio-left { flex: none; height: auto; padding: 60px 0 40px 0; border-right: none; }
     
     .bio-right { 
-        flex: none; padding: 50px 40px; margin-top: -60px; z-index: 5;
-        border-radius: 30px 30px 0 0; position: relative;
+        flex: none; padding: 50px 40px; margin-top: 0; z-index: 5;
+        border-radius: 0; position: relative;
         box-shadow: 0 -10px 40px rgba(0,0,0,0.06); 
     }
 
-    .bio-details-name { font-size: 2.8rem; }
-    .bio-details-title { font-size: 1.05rem; margin-bottom: 25px; }
-    .bio-intro-text { font-size: 0.95rem; line-height: 1.7; margin-bottom: 30px; padding-bottom: 30px; }
+    .bio-details-name { font-size: 2.4rem; }
+    .bio-details-title { font-size: 0.95rem; margin-bottom: 25px; }
+    .bio-intro-text { font-size: 0.9rem; line-height: 1.7; margin-bottom: 30px; padding-bottom: 30px; }
     .bio-section-item { gap: 20px; margin-bottom: 35px; }
-    .bio-text-content p, .bio-text-content ul { font-size: 0.9rem; line-height: 1.7; }
+    .bio-text-content p, .bio-text-content ul { font-size: 0.85rem; line-height: 1.7; }
     
     .bio-close { 
         position: fixed; top: 20px; right: -100px; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
@@ -453,11 +446,6 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
     }
     .bio-panel.active .bio-close {
         right: 20px;
-    }
-
-    /* Retain original Mobile Disclaimer line-clamp behavior */
-    .disclaimer-text {
-        -webkit-line-clamp: 3;
     }
 }
 
@@ -492,7 +480,6 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
     .leadership-header { margin-bottom: 40px; }
     .leadership-header h2 { font-size: 2.4rem; }
     .leadership-header p { font-size: 0.95rem; }
-    .team-img-wrapper { height: 400px; }
 
     .stats-grid { grid-template-columns: 1fr; gap: 30px 0; padding: 30px 0; }
     .stat-item { border-right: none; border-bottom: 1px solid var(--border-light); padding: 0 0 25px 0; align-items: center; text-align: center; }
@@ -504,7 +491,17 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
     .footer-logo p, .footer-links a, .footer-contact p, .footer-contact a { font-size: 0.8rem; }
     .footer-bottom { flex-direction: column; text-align: center; gap: 15px; font-size: 0.75rem; }
     .footer-logo p { max-width: 100%; }
-    .footer-disclaimer p { font-size: 0.65rem; line-height: 1.7; }
+
+    /* Responsive adjustments for disclaimer */
+    .footer-disclaimer p { 
+        font-size: 0.65rem; 
+        line-height: 1.7; 
+        margin-bottom: 12px; 
+    }
+    
+    .disclaimer-text {
+        -webkit-line-clamp: 3; /* Mobile clamp forced to exactly 3 lines */
+    }
 }
 
 @media (max-width: 480px) {
@@ -521,7 +518,6 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
     .leadership-header h2 { font-size: 2rem; }
     
     .team-grid { grid-template-columns: minmax(280px, 1fr); gap: 30px; justify-content: center; }
-    .team-img-wrapper { height: 360px; }
     
     .delay-1, .delay-2, .delay-3, .delay-4 { transition-delay: 0s; }
 
@@ -531,14 +527,12 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
     .logo img { height: 60px; }
     footer { padding: 60px 0 30px; }
     .footer-grid { gap: 40px; margin-bottom: 40px; }
-    .footer-disclaimer p { font-size: 0.6rem; }
     .footer-logo p, .footer-links a, .footer-contact p, .footer-contact a { font-size: 0.75rem; }
 
     /* Premium Typography scaling for small mobile viewpoints */
-    .bio-logo-img { width: 190px; margin-bottom: 15px; }
-    .bio-image-wrapper-large { height: 360px; }
+    .bio-logo-img { width: 190px; }
     
-    .bio-right { padding: 40px 24px; margin-top: -50px; border-radius: 24px 24px 0 0; }
+    .bio-right { padding: 40px 24px; margin-top: 0; border-radius: 0; }
     .bio-close { width: 44px; height: 45px; font-size: 1.6rem; top: 15px; }
     .bio-panel.active .bio-close { right: 15px; }
     
@@ -552,4 +546,10 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
     .bio-text-content h4 { font-size: 0.75rem; margin-bottom: 8px; }
     .bio-text-content p, .bio-text-content ul { font-size: 0.8rem; line-height: 1.6; }
     .bio-text-content ul { padding-left: 15px; }
+    
+    /* Responsive adjustments for disclaimer */
+    .footer-disclaimer p { 
+        font-size: 0.6rem; 
+        margin-bottom: 10px; 
+    }
 }
