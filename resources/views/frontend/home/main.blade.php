@@ -45,7 +45,7 @@
                         <div class="stat-text">Capital Origination</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">20+ Years</div>
+                        <div class="stat-number">Capital Compounded</div>
                         <div class="stat-text">Family Office & Principal <span class="light">Mindset</span></div>
                     </div>
                     <div class="stat-item">
