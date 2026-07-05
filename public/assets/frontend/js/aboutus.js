@@ -69,12 +69,11 @@ document.addEventListener("DOMContentLoaded", () => {
         edu: `<svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>`
     };
 
-    // Database of Team Bios with Updated Content
+    // Database of Team Bios with Updated Content (Intro completely removed)
     const bioData = {
         "tanaz": {
             name: "Tanaz Choudhury",
             title: "Founder / Principal",
-            intro: "Tanaz Choudhury is Founder and Principal of Avanty Capital, setting the firm's strategic direction and leading its governance, institutional relationships and long term growth. Her background spans international banking, governance and compliance, and family office leadership, shaping a firm built on discipline, alignment and long term value.",
             sections: [
                 { 
                     icon: "person", 
@@ -91,7 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
         "jenny": {
             name: "Jenny Won Lee",
             title: "Head of Capital Markets, Funding Strategy and Transaction Structuring",
-            intro: "Jenny Won Lee leads Avanty Capital's capital markets function, responsible for commercial pricing, capital strategy, capital provider engagement and transaction structuring. She shapes funding solutions that are commercially realistic, aligned to cost of capital and executable across complex real estate and private capital transactions.",
             sections: [
                 { 
                     icon: "person", 
@@ -108,7 +106,6 @@ document.addEventListener("DOMContentLoaded", () => {
         "kai": {
             name: "Kai Leuw",
             title: "Head of Operations, Governance and Transaction Delivery",
-            intro: "Kai Leuw is Head of Operations at Avanty Capital, directing internal management, operational governance and transaction delivery across the firm. She holds the firm's commercial processes, documentation and stakeholder communication to a single standard of order, consistency and long term discipline, ensuring the firm's transaction activity moves with the rigour institutional counterparties expect. As a key member of the firm's daily operations, Kai is the constant thread running through every transaction from origination to completion.",
             sections: [
                 { 
                     icon: "person", 
@@ -142,10 +139,15 @@ document.addEventListener("DOMContentLoaded", () => {
             const memberData = bioData[memberKey];
 
             if(memberData) {
-                // Populate Header & Intro
+                // Populate Header
                 bioName.innerText = memberData.name;
                 bioTitle.innerText = memberData.title;
-                bioIntro.innerText = memberData.intro;
+                
+                // Clear and hide the intro element if it still exists in the HTML
+                if(bioIntro) {
+                    bioIntro.innerText = '';
+                    bioIntro.style.display = 'none';
+                }
 
                 // Build Dynamic Sections with animation-ready structure
                 dynamicSections.innerHTML = '';
