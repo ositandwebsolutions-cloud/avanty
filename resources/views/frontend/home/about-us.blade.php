@@ -72,8 +72,8 @@
     <section class="leadership-section">
         <div class="container">
             <div class="leadership-header animate-on-scroll">
-                <div class="eyebrow">A SHARED VISION</div>
                 <h2>Leadership</h2>
+                <div class="eyebrow">A SHARED VISION</div>
                 <div class="header-line"></div>
                 <p>Our team brings together experience across private banking, private credit, private equity, investment management, international governance and compliance, fintech and real estate-backed finance.<br><br>With perspectives shaped across Asia, the Middle East and Europe, this collective experience supports a disciplined approach to capital, risk, investment and complex cross-border transactions.</p>
             </div>
