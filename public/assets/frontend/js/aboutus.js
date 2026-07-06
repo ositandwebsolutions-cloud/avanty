@@ -69,8 +69,8 @@ document.addEventListener("DOMContentLoaded", () => {
         edu: `<svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>`
     };
 
-    // Database of Team Bios with Updated Content (Intro completely removed)
-    const bioData = {
+    // Database of Team Bios - Static Fallback Content
+    const staticFallbackBioData = {
         "tanaz": {
             name: "Tanaz Choudhury",
             title: "Founder / Principal",
@@ -121,6 +121,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
+    // Integration Logic: Use dynamic Filament backend data if available, otherwise fallback to static HTML data.
+    const hasDynamicData = window.dynamicBioData && Object.keys(window.dynamicBioData).length > 0;
+    const bioData = hasDynamicData ? window.dynamicBioData : staticFallbackBioData;
+
     const teamCards = document.querySelectorAll('.team-card');
     const bioOverlay = document.getElementById('bio-overlay');
     const bioPanel = document.getElementById('bio-panel');
@@ -151,11 +155,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 // Build Dynamic Sections with animation-ready structure
                 dynamicSections.innerHTML = '';
-                memberData.sections.forEach(sec => {
+                
+                // Safety check in case sections are empty in dynamic data
+                const sectionsToRender = memberData.sections || [];
+                
+                sectionsToRender.forEach(sec => {
+                    // Safety fallback if the user forgets to pick an icon in Filament
+                    const iconSvg = icons[sec.icon] || icons.person; 
+                    
                     const sectionHTML = `
                         <div class="bio-section-item">
                             <div class="bio-icon-box">
-                                ${icons[sec.icon]}
+                                ${iconSvg}
                             </div>
                             <div class="bio-text-content">
                                 <h4>${sec.title}</h4>

@@ -27,9 +27,10 @@ class ContactController extends Controller
         // 1. Save to Database (Filament Panel)
         $contactMessage = ContactMessage::create($validated);
 
-        // 2. Try to Send Email
+        // 2. Try to Send Email via one.com SMTP
         try {
-            $recipients = ['portfolio@avantycapital.com', 'avantycapital@gmail.com'];
+            // Updated to exclusively send to your business email
+            $recipients = ['portfolio@avantycapital.com'];
             Mail::to($recipients)->send(new NewContactSubmission($contactMessage));
         } catch (\Exception $e) {
             // If the email fails, log the real reason so you can fix it, 
