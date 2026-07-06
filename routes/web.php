@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ContactController;
 // Home Page Route
 Route::get('/', function () {
     return view('frontend.home.main');
@@ -38,3 +38,5 @@ Route::get('/ourpresence', function () {
     // This looks for resources/views/frontend/home/ourpresence.blade.php
     return view('frontend.home.ourpresence'); 
 });
+
+Route::post('/contact/submit', [ContactController::class, 'submit'])->name('contact.submit');

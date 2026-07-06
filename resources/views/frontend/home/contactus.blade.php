@@ -77,19 +77,23 @@
                     <div class="eyebrow">
                         SEND US A MESSAGE
                     </div>
-                    <form class="contact-form" onsubmit="event.preventDefault();">
-                        <div class="form-row">
-                            <input type="text" placeholder="First Name" required>
-                            <input type="text" placeholder="Last Name" required>
-                        </div>
-                        <input type="email" placeholder="Email Address" required>
-                        <input type="text" placeholder="Company / Organization">
-                        <input type="text" placeholder="Subject">
-                        <textarea placeholder="Your Message" required></textarea>
-                        <button type="submit" class="btn-submit">
-                            SEND MESSAGE <span>&rarr;</span>
-                        </button>
-                    </form>
+                    <form class="contact-form" id="main-contact-form">
+    @csrf
+    <div class="form-row">
+        <input type="text" name="first_name" placeholder="First Name" required>
+        <input type="text" name="last_name" placeholder="Last Name" required>
+    </div>
+    <input type="email" name="email" placeholder="Email Address" required>
+    <input type="text" name="company" placeholder="Company / Organization">
+    <input type="text" name="subject" placeholder="Subject">
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    
+    <div id="form-feedback" style="display: none; margin-bottom: 15px; color: #d4af37;"></div>
+    
+    <button type="submit" class="btn-submit" id="submit-btn">
+        SEND MESSAGE <span>&rarr;</span>
+    </button>
+</form>
                 </div>
 
             </div>
