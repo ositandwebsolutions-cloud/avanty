@@ -15,6 +15,9 @@ class ContactController extends Controller
 {
     public function submit(Request $request): JsonResponse
     {
+        // Diagnostic Log 1: Confirm the request actually reached the controller
+        Log::info('Form submission started on localhost.');
+
         $validated = $request->validate([
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
@@ -30,11 +33,14 @@ class ContactController extends Controller
         // 2. Try to Send Email via one.com SMTP
         try {
             // Updated to exclusively send to your business email
-            $recipients = ['portfolio@avantycapital.com'];
+            $recipients = ['orpon.pciu@gmail.com'];
             Mail::to($recipients)->send(new NewContactSubmission($contactMessage));
-        } catch (\Exception $e) {
-            // If the email fails, log the real reason so you can fix it, 
-            // but DO NOT crash the user's form submission.
+            
+            // Diagnostic Log 2: Confirm the email was actually handed off to the SMTP server
+            Log::info('Email successfully handed over to One.com from localhost.');
+            
+        } catch (\Throwable $e) { 
+            // CRITICAL FIX: Changed \Exception to \Throwable to catch ALL fatal PHP errors
             Log::error('Contact Form Email Failed: ' . $e->getMessage());
         }
 
