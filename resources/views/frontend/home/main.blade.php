@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Avanty Capital | Empowering Legacy | Singapore Strategic Capital</title>
-    <meta name="description" content="Avanty Capital is a Singapore-based firm specializing in capital origination, participation, and deployment across real estate, infrastructure, and strategic transactions.">
-    
+    <title>Avanty Capital - Empowering Legacy</title>
+    <meta name="description" content="Avanty Capital operates alongside its own family office interests and a trusted network of external family offices, institutional participants, high net worth individuals and corporate stakeholders.">
     @include('frontend.home.css')
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/style.css') }}?v=1.8">
 </head>
@@ -37,29 +36,7 @@
             </div>
         </main>
 
-        <div class="stats-bar">
-            <div class="container">
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-number">$800M+</div>
-                        <div class="stat-text">Capital Origination</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">Strategy Compounded</div>
-                        <div class="stat-text">Family Office & Principal <span class="light">Mindset</span></div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">Asia • Middle East • Europe</div>
-                        <div class="stat-text">Cross Border <span class="light">Transactions</span></div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">Focused on Execution</div>
-                        <div class="stat-text"><span class="light">Disciplined • Trusted • Aligned</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+     @include('frontend.home.status')   
 
      @include('frontend.home.footer')
 
