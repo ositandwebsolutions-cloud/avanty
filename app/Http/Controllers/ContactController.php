@@ -33,8 +33,7 @@ class ContactController extends Controller
         // 2. Try to Send Email via one.com SMTP
         try {
             // Updated to exclusively send to your business email
-            $recipients = ['orpon.pciu@gmail.com'];
-            
+            $recipients = ['portfolio@avantycapital.com'];
             Mail::to($recipients)->send(new NewContactSubmission($contactMessage));
             
             // Diagnostic Log 2: Confirm the email was actually handed off to the SMTP server
