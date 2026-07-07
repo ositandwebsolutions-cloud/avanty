@@ -41,11 +41,6 @@
     </div>
         <div class="footer-bottom">
             <div>&copy; 2026 Avanty Capital. All rights reserved.</div>
-            <div class="dev-credit">
-                <a href="https://asthadmm.com" target="_blank" rel="noopener noreferrer">
-                    Developed by <span>Astha DMM</span>
-                </a>
-            </div>
         </div>
     </div>
 </footer>
