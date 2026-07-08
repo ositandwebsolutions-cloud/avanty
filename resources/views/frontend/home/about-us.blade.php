@@ -6,6 +6,20 @@
     <title>About Us - Avanty Capital</title>
       @include('frontend.home.css')
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/aboutus.css') }}?v=1.9">
+    
+    <style>
+        .f-card::before, 
+        .f-card::after {
+            display: none !important;
+            background: none !important;
+        }
+        .f-card:hover, 
+        .f-card:active, 
+        .f-card:focus {
+            background-color: transparent !important;
+            box-shadow: none !important;
+        }
+    </style>
 </head>
 <body>
 
@@ -113,7 +127,7 @@
                     <div class="team-card animate-on-scroll delay-1" data-member="tanaz">
                         <div class="team-info">
                             <h3 class="team-name">Tanaz Choudhury</h3>
-                            <p class="team-title">Founder / Principal</p>
+                            <p class="team-title">Principal</p>
                             <a href="#" class="bio-btn">
                                 <span>Read Biography</span>
                                 <span class="arrow">&rarr;</span>
