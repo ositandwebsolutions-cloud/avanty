@@ -4,7 +4,7 @@
     --text-muted: #4a545c;     /* Lighter slate for paragraphs */
     --gold: #b88a44;           /* Brand gold */
     --border-color: rgba(22, 34, 45, 0.1); /* Subtle lines */
-    --bg-fallback: #E3D5C6;    /* Fallback color while image loads */
+    --bg-fallback: #EADECE;    /* Fallback color while image loads */
     
     /* Dark Navy Theme for Stats Bar */
     --bg-dark: #0d131a;        /* Deep navy background */

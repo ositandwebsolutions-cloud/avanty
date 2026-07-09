@@ -4,7 +4,7 @@
     --text-muted: #4a545c;
     --gold: #b88a44;
     --border-color: rgba(22, 34, 45, 0.1);
-    --bg-fallback: #F1E6DC; /* Specific background for Capabilities */
+    --bg-fallback: #F8ECE0; /* Specific background for Capabilities */
     
     /* Dark Navy Theme for Stats Bar */
     --bg-dark: #0d131a;

@@ -12,7 +12,7 @@
 
     <div id="page-transition-overlay" class="page-transition-overlay"></div>
 
-    <div class="hero-bg-wrapper" style="background-image: url('{{ asset('assets/frontend/img/hero6.jpg') }}');">
+    <div class="hero-bg-wrapper" style="background-image: url('{{ asset('assets/frontend/img/hero66.jpg') }}');">
         @include('frontend.home.header')
 
         <main class="container hero-main">

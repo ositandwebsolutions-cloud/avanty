@@ -14,7 +14,7 @@
     <div id="page-transition-overlay" class="page-transition-overlay"></div>
 
     <!-- The background image is handled inline using the asset() helper -->
-    <div class="hero-bg-wrapper" style="background-image: url('{{ asset('assets/frontend/img/hero3.jpg') }}');">
+    <div class="hero-bg-wrapper" style="background-image: url('{{ asset('assets/frontend/img/hero111.jpeg') }}');">
         @include('frontend.home.header')
 
         <main class="container hero-main">

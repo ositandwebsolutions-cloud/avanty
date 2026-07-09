@@ -13,7 +13,7 @@
     <div id="page-transition-overlay" class="page-transition-overlay"></div>
 
     <!-- Background image moved here from CSS to keep image links in Blade -->
-    <div class="hero-bg-wrapper" style="background-image: url('{{ asset('assets/frontend/img/hero4.jpg') }}');">
+    <div class="hero-bg-wrapper" style="background-image: url('{{ asset('assets/frontend/img/hero33.jpg') }}');">
         @include('frontend.home.header')
 
         <main class="container hero-main">
