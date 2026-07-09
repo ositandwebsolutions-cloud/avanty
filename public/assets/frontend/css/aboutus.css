@@ -4,7 +4,7 @@
     --text-muted: #4a545c;
     --gold: #b88a44;
     --border-color: rgba(22, 34, 45, 0.1);
-    --bg-fallback: #EBE2DB; /* Specific background for About Us */
+    --bg-fallback: #ECE4DD; /* Specific background for About Us */
     
     /* Dark Navy Theme for Stats Bar & Leadership */
     --bg-dark: #0d131a;
