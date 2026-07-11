@@ -142,18 +142,6 @@
                 <div class="area-card">
                     <div class="area-icon">
                         <svg viewBox="0 0 24 24">
-                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                        </svg>
-                    </div>
-                    <h3>Corporate Transactions</h3>
-                    <p>We partner business owners, entrepreneurs, corporate groups and strategic stakeholders on refinancing initiatives, growth strategies and corporate transactions.</p>
-                    <p>Our focus remains on capital commitment, stakeholder management and transaction execution, with a practical and commercially focused approach.</p>
-                </div>
-
-                <div class="area-card">
-                    <div class="area-icon">
-                        <svg viewBox="0 0 24 24">
                             <circle cx="12" cy="12" r="10"></circle>
                             <line x1="2" y1="12" x2="22" y2="12"></line>
                             <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
@@ -165,18 +153,6 @@
                     <p>This international perspective enables us to lead transactions requiring coordination between capital providers, sponsors, advisers and project participants across different regions.</p>
                 </div>
 
-            </div>
-
-            <div class="commitment-banner">
-                <div class="commit-left">
-                    <div class="short-gold-line"></div>
-                    <h2>Capital Origination.<br>Capital Participation.<br>Capital Deployment.</h2>
-                </div>
-                <div class="commit-right">
-                    <p>Across every sector in which we operate, our focus remains consistent.</p>
-                    <p>We originate capital, participate alongside capital partners and deploy capital into real estate, infrastructure, acquisitions and strategic transactions.</p>
-                    <p>These principles form the foundation of Avanty Capital and underpin our approach to disciplined execution, stakeholder alignment and long term value creation.</p>
-                </div>
             </div>
         </div>
     </section>

@@ -78,33 +78,24 @@
                         SEND US A MESSAGE
                     </div>
                     <form class="contact-form" id="main-contact-form">
-    @csrf
-    <div class="form-row">
-        <input type="text" name="first_name" placeholder="First Name" required>
-        <input type="text" name="last_name" placeholder="Last Name" required>
-    </div>
-    <input type="email" name="email" placeholder="Email Address" required>
-    <input type="text" name="company" placeholder="Company / Organization">
-    <input type="text" name="subject" placeholder="Subject">
-    <textarea name="message" placeholder="Your Message" required></textarea>
-    
-    <div id="form-feedback" style="display: none; margin-bottom: 15px; color: #d4af37;"></div>
-    
-    <button type="submit" class="btn-submit" id="submit-btn">
-        SEND MESSAGE <span>&rarr;</span>
-    </button>
-</form>
+                        @csrf
+                        <div class="form-row">
+                            <input type="text" name="first_name" placeholder="First Name" required>
+                            <input type="text" name="last_name" placeholder="Last Name" required>
+                        </div>
+                        <input type="email" name="email" placeholder="Email Address" required>
+                        <input type="text" name="company" placeholder="Company / Organization">
+                        <input type="text" name="subject" placeholder="Subject">
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                        
+                        <div id="form-feedback" style="display: none; margin-bottom: 15px; color: #d4af37;"></div>
+                        
+                        <button type="submit" class="btn-submit" id="submit-btn">
+                            SEND MESSAGE <span>&rarr;</span>
+                        </button>
+                    </form>
                 </div>
 
-            </div>
-
-            <div class="commitment-banner">
-                <div class="commit-left">
-                    <h2>We value relationships<br>built on trust, discretion<br>and shared ambition.</h2>
-                </div>
-                <div class="commit-right">
-                    <p>We take the time to understand what matters most and bring our capital, network and execution to it.</p>
-                </div>
             </div>
 
         </div>

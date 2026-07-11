@@ -78,6 +78,11 @@
                     <p>This includes acquisition transactions, development projects, refinancing initiatives and broader strategic capital requirements relating to real estate assets.</p>
                 </div>
                 
+            </div>
+
+            <!-- Wrapped Last 3 Cards for Centering -->
+            <div class="cap-grid-last-row">
+                
                 <div class="cap-card">
                     <div class="cap-num">05</div>
                     <div class="cap-divider"></div>
@@ -100,17 +105,6 @@
                     <h3>Cross Border Transactions</h3>
                     <p>Operating from Singapore and supporting clients across Asia, the Middle East and Europe, Avanty Capital understands the complexities associated with cross border transactions, multiple stakeholder environments and international capital participation.</p>
                     <p>Our global network enables us to support clients operating across jurisdictions while maintaining a practical focus on execution and delivery.</p>
-                </div>
-
-            </div>
-
-            <div class="commitment-banner">
-                <div class="commit-left">
-                    <div class="short-gold-line"></div>
-                    <h2>Capital Origination.<br>Capital Participation.<br>Capital Deployment.</h2>
-                </div>
-                <div class="commit-right">
-                    <p>At its core, Avanty Capital remains focused on three fundamental principles: Capital Origination, Capital Participation, and Capital Deployment.</p>
                 </div>
             </div>
         </div>
