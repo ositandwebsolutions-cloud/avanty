@@ -134,17 +134,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="team-card animate-on-scroll delay-2" data-member="jenny">
-                        <div class="team-info">
-                            <h3 class="team-name">Jenny Won Lee</h3>
-                            <p class="team-title">Head of Capital Markets</p>
-                            <a href="#" class="bio-btn">
-                                <span>Read Biography</span>
-                                <span class="arrow">&rarr;</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="team-card animate-on-scroll delay-3" data-member="kai">
+                    <div class="team-card animate-on-scroll delay-2" data-member="kai">
                         <div class="team-info">
                             <h3 class="team-name">Kai Leuw</h3>
                             <p class="team-title">Head of Operations</p>

@@ -87,22 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             ]
         },
-        "jenny": {
-            name: "Jenny Won Lee",
-            title: "Head of Capital Markets, Funding Strategy and Transaction Structuring",
-            sections: [
-                { 
-                    icon: "person", 
-                    title: "EXECUTIVE OVERVIEW", 
-                    content: "Jenny Won Lee leads Avanty Capital's capital markets function, responsible for commercial pricing, capital strategy, capital provider engagement and transaction structuring. She shapes funding solutions that are commercially realistic, aligned to cost of capital and executable across complex real estate and private capital transactions." 
-                },
-                { 
-                    icon: "briefcase", 
-                    title: "PROFESSIONAL BIOGRAPHY", 
-                    content: "Jenny graduated with distinction in Mathematics from the University of Seoul, giving her a strong analytical foundation across investment analysis, private equity markets and transaction execution.<br><br>Before joining Avanty Capital, Jenny built her career in Hong Kong's financial markets, working across private equity, investment analysis and transaction execution. This gave her a practical understanding of how capital providers assess risk, pricing, security, exit strategy and sponsor credibility.<br><br>At Avanty Capital, Jenny reviews commercial pricing, capital structures, debt facilities, market comparables and funding strategy alongside the leadership team, shaping the financial narrative of each transaction so counterparties understand the opportunity, the security position, the repayment strategy and the commercial rationale.<br><br>She leads negotiations with capital providers, advisers and institutional counterparties, translating deal information into structured capital markets presentations with clear, credible and commercially disciplined valuation assumptions, debt sizing, projected returns and execution milestones." 
-                }
-            ]
-        },
         "kai": {
             name: "Kai Leuw",
             title: "Head of Operations, Governance and Transaction Delivery",
