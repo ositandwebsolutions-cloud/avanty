@@ -143,14 +143,26 @@ h1 .gold-text { color: var(--gold); }
 .commit-right { border-left: 1px solid var(--gold); padding-left: 40px; }
 .commit-right p { font-size: 0.95rem; color: var(--text-dark); line-height: 1.8; max-width: 450px; }
 
-/* BOTTOM STATS BAR */
-.stats-bar { width: 100%; background-color: var(--bg-dark); position: relative; z-index: 3; }
+/* BOTTOM STATS BAR FIX */
+.stats-bar { width: 100%; background-color: var(--bg-dark); position: relative; z-index: 3; overflow: hidden; }
 .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); padding: 40px 0; }
-.stat-item { padding: 0 40px; border-right: 1px solid var(--border-light); display: flex; flex-direction: column; }
+.stat-item { padding: 0 20px; border-right: 1px solid var(--border-light); display: flex; flex-direction: column; overflow: hidden; }
 .stat-item:last-child { border-right: none; }
-.stat-number { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--gold); margin-bottom: 12px; font-weight: 500; transition: font-size 0.3s ease; }
-.stat-text { font-size: 0.85rem; color: var(--text-white); line-height: 1.6; }
-.stat-text span.light { color: var(--text-light-gray); display: block; }
+
+/* Fluid clamp sizing ensures text shrinks smoothly on standard laptops to prevent overflow */
+.stat-number { 
+    font-family: 'Playfair Display', serif; 
+    font-size: clamp(1rem, 1.3vw, 1.8rem); 
+    color: var(--gold); 
+    margin-bottom: 12px; 
+    font-weight: 500; 
+    transition: font-size 0.3s ease; 
+    white-space: nowrap; 
+}
+
+/* UPDATED STATS TEXT: Forces single line and ensures white color for all text including span.light */
+.stat-text { font-size: 0.8rem; color: var(--text-white); line-height: 1.6; white-space: nowrap; }
+.stat-text span.light { color: var(--text-white); display: inline; }
 
 /* FOOTER */
 footer { background-color: transparent; color: var(--text-muted); padding: 80px 0 40px; }
@@ -177,6 +189,10 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
 .footer-bottom .dev-credit span { color: var(--gold); font-weight: 500; }
 
 /* --- RESPONSIVE MEDIA QUERIES --- */
+
+@media (max-width: 1400px) {
+    .stat-item { padding: 0 15px; }
+}
 
 @media (max-width: 1200px) {
     h1 { font-size: 4.2rem; }
@@ -316,9 +332,9 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
 .see-more-btn {
     background: transparent;
     border: none;
-    color: var(--text-dark) !important; /* Deep text based on your variable */
-    font-weight: 400; /* As requested */
-    font-size: 10px;  /* As requested */
+    color: var(--text-dark) !important;
+    font-weight: 400;
+    font-size: 10px;
     padding: 0;
     cursor: pointer;
     text-decoration: underline;

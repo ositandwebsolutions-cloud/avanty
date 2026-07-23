@@ -289,12 +289,35 @@ h1 .gold-text { color: var(--gold); }
    BOTTOM STATS BAR
    ========================================================================== */
 .stats-bar { width: 100%; background-color: var(--bg-dark); position: relative; z-index: 3; }
-.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); padding: 40px 0; }
-.stat-item { padding: 0 40px; border-right: 1px solid var(--border-light); display: flex; flex-direction: column; }
-.stat-item:last-child { border-right: none; }
-.stat-number { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--gold); margin-bottom: 12px; font-weight: 500; }
-.stat-text { font-size: 0.85rem; color: var(--text-white); line-height: 1.6; }
-.stat-text span.light { color: var(--text-light-gray); display: block; }
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); padding: 40px 0; gap: 10px; }
+
+/* FIXED OVERLAPPING: Reduced padding from 40px to 10px and aligned edge items flush */
+.stat-item { padding: 0 10px; border-right: 1px solid var(--border-light); display: flex; flex-direction: column; justify-content: center; }
+.stat-item:first-child { padding-left: 0; }
+.stat-item:last-child { border-right: none; padding-right: 0; }
+
+/* FIXED OVERLAPPING: Converted fixed sizes to fluid 'clamp' to fit smaller desktop screens perfectly */
+.stat-number { 
+    font-family: 'Playfair Display', serif; 
+    font-size: clamp(1.2rem, 1.8vw, 1.8rem); 
+    color: var(--gold); 
+    margin-bottom: 12px; 
+    font-weight: 500; 
+    white-space: nowrap; 
+}
+
+/* UPDATED STAT TEXT RULES HERE */
+.stat-text { 
+    font-size: clamp(0.7rem, 1vw, 0.85rem); 
+    color: var(--text-white); 
+    line-height: 1.6; 
+    white-space: nowrap; /* Forces content onto one line */
+}
+.stat-text span.light { 
+    color: #ffffff;      /* Changed from gray to white */
+    display: inline;     /* Changed from block to inline to keep on same line */
+    margin-left: 3px;    /* Optional spacing */
+}
 
 /* ==========================================================================
    FOOTER 
@@ -329,8 +352,9 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
 @media (max-width: 1200px) {
     h1 { font-size: 4.5rem; }
     .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 0; }
-    .stat-item { padding: 0 30px; }
-    .stat-item:nth-child(2) { border-right: none; }
+    .stat-item { padding: 0 15px; } /* Updated to match new reduced spacing */
+    .stat-item:nth-child(2) { border-right: none; padding-right: 0; } /* Adjusted edge padding for grid switch */
+    .stat-item:nth-child(3) { padding-left: 0; } /* Adjusted edge padding for grid switch */
 }
 
 @media (max-width: 992px) {
@@ -389,9 +413,10 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
     
     .stats-grid { grid-template-columns: 1fr; gap: 30px 0; padding: 30px 0; }
     .stat-item { border-right: none; border-bottom: 1px solid var(--border-light); padding: 0 0 25px 0; align-items: center; text-align: center; }
-    .stat-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-item:last-child { border-bottom: none; padding-bottom: 0; padding-right: 0; }
     .stat-number { font-size: 1.6rem; }
-    .stat-text { font-size: 0.8rem; }
+    .stat-text { font-size: 0.8rem; white-space: normal; } /* Allow wrapping on very small screens if needed */
     
     .footer-links { grid-template-columns: 1fr; }
     .footer-logo p, .footer-links a, .footer-contact p, .footer-contact a { font-size: 0.8rem; }

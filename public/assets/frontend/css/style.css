@@ -107,13 +107,34 @@ h1 .gold-text { color: var(--gold); }
 .btn-primary { background-color: var(--gold); color: #ffffff; border: 1px solid var(--gold); }
 .btn-secondary { background-color: transparent; color: var(--text-dark); border: 1px solid var(--border-color); }
 
+/* --- STATS SECTION FIXES --- */
 .stats-bar { width: 100%; background-color: var(--bg-dark); margin-top: auto; }
 .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); padding: 40px 0; }
-.stat-item { padding: 0 40px; border-right: 1px solid var(--border-light); display: flex; flex-direction: column; }
+
+/* Reduced padding from 40px to 15px to give long text more space in the 1fr column */
+.stat-item { padding: 0 15px; border-right: 1px solid var(--border-light); display: flex; flex-direction: column; justify-content: center; }
 .stat-item:last-child { border-right: none; }
-.stat-number { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--gold); margin-bottom: 12px; font-weight: 500; transition: font-size 0.3s ease; }
-.stat-text { font-size: 0.85rem; color: var(--text-white); line-height: 1.6; }
-.stat-text span.light { color: var(--text-light-gray); display: block; }
+
+/* Replaced static 1.7rem with a fluid clamp to automatically shrink font slightly before breakpoints to prevent overlap */
+.stat-number { 
+    font-family: 'Playfair Display', serif; 
+    font-size: clamp(1.2rem, 1.5vw, 1.7rem); 
+    color: var(--gold); 
+    margin-bottom: 12px; 
+    font-weight: 500; 
+    transition: font-size 0.3s ease; 
+    white-space: nowrap; 
+}
+
+/* Fluid typography applied to text elements as well */
+.stat-text { 
+    font-size: clamp(0.7rem, 0.9vw, 0.78rem); 
+    color: var(--text-white); 
+    line-height: 1.6; 
+    white-space: nowrap; 
+}
+.stat-text span.light { color: var(--text-white); display: inline; }
+/* -------------------------- */
 
 footer { background-color: transparent; color: var(--text-muted); padding: 80px 0 40px; }
 .footer-grid { display: grid; grid-template-columns: 1.3fr 1.7fr 1fr; gap: 60px; margin-bottom: 60px; }
@@ -218,12 +239,6 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
     .footer-disclaimer p { font-size: 0.6rem; }
     .footer-logo p, .footer-links a, .footer-contact p, .footer-contact a { font-size: 0.75rem; }
 }
-
-
-
-
-
-
 
 /* Base disclaimer text setup (Mobile: 3 lines) */
 .disclaimer-text {
