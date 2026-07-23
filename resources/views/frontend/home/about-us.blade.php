@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>About Us - Avanty Capital</title>
       @include('frontend.home.css')
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/aboutus.css') }}?v=2.0">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/aboutus.css') }}?v=3.0">
     
     <style>
         .f-card::before, 
@@ -172,6 +172,6 @@
     <script>
         window.dynamicBioData = @json($jsBioData ?? []);
     </script>
-    <script src="{{ asset('assets/frontend/js/aboutus.js') }}?v=3"></script>
+    <script src="{{ asset('assets/frontend/js/aboutus.js') }}?v=4"></script>
 </body>
 </html>

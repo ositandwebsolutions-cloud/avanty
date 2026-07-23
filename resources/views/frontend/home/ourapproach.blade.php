@@ -7,7 +7,7 @@
     @include('frontend.home.css')
     <!-- Link to external CSS -->
     
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/ourapproach.css') }}?v=1.8">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/ourapproach.css') }}?v=1.9">
 </head>
 <body>
 
@@ -112,6 +112,6 @@
 
     @include('frontend.home.footer')
 
-    <script src="{{ asset('assets/frontend/js/script.js') }}?v=1.5"></script>
+    <script src="{{ asset('assets/frontend/js/script.js') }}?v=1.6"></script>
 </body>
 </html>
