@@ -236,6 +236,7 @@ footer { background-color: transparent; color: var(--text-muted); padding: 80px 
         -webkit-line-clamp: 2; 
         line-clamp: 2;
     }
+    
 }
 .disclaimer-text.expanded {
     -webkit-line-clamp: unset;
