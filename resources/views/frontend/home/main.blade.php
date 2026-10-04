@@ -45,5 +45,6 @@
     </div>
 
     <script src="{{ asset('assets/frontend/js/script.js') }}?v=1.6"></script>
+    
 </body>
 </html>
